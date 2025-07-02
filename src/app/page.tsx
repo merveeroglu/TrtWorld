@@ -6,6 +6,8 @@ import Loading from "./loading";
 import NewsCard from "@/components/NewsCard";
 import styled from "styled-components";
 import AuthorsPanelCard from "@/components/AuthorsPanelCard";
+import CategoryNewsCard from "@/components/CategoryNewsCard";
+import EditorsPick from "@/components/EditorsPick";
 
 interface Category {
   contentId: number;
@@ -100,10 +102,7 @@ const RelatedText = styled.div`
 `;
 const PopularList = styled.div`
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   > * {
     border-right: 1px solid #ccc;
@@ -144,10 +143,7 @@ const PopularList = styled.div`
 `;
 const RelatedStories = styled.div`
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(200px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   > * {
     border-right: 1px solid #cccccc98;
@@ -250,6 +246,36 @@ const AuthorsPanel = styled.div`
   flex: 1;
   margin-left: 25px;
 `;
+const CategoryNewsWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+`;
+const CategoryNews = styled.div`
+  flex: 3;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+
+  > *:not(:last-child) {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+`;
+const EditorsPickWrapper = styled.div`
+  flex: 0.7;
+  padding: 15px;
+`;
+const EditorsPickText = styled.h2`
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: start;
+
+`;
+
 
 export default function Home() {
   const [headline, setHeadline] = useState<NewsItem | null>(null);
@@ -257,6 +283,7 @@ export default function Home() {
   const [related, setRelated] = useState<NewsItem[]>([]);
   const [popular, setPopular] = useState<NewsItem[]>([]);
   const [latest, setLatest] = useState<NewsItem[]>([]);
+  const [categoryNews, setCategoryNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(false);
   // console.log("headline2", headline);
   // console.log("news2", news);
@@ -284,6 +311,7 @@ export default function Home() {
     setRelated(relatedRes.data);
     setPopular(popularRes.data);
     setLatest(latestRes.data);
+    setCategoryNews(categoryNewsRes.data);
     setLoading(false);
   };
 
@@ -303,8 +331,11 @@ export default function Home() {
             <RelatedText>RELATED STORIES</RelatedText>
             <RelatedStories>
               {related.map((item, idx) => {
-                const columns = Math.floor(window.innerWidth >= 1000 ? window.innerWidth / 220 : 1);
-                const isLastInRow = columns > 1 ? (idx + 1) % columns === 0 : false;
+                const columns = Math.floor(
+                  window.innerWidth >= 1000 ? window.innerWidth / 220 : 1
+                );
+                const isLastInRow =
+                  columns > 1 ? (idx + 1) % columns === 0 : false;
                 return (
                   <NewsCard
                     item={item}
@@ -355,9 +386,22 @@ export default function Home() {
             key={item.id}
             showDescription={false}
             $latest={true}
+            showDate={true}
           />
         ))}
       </LatestWrapper>
+      <CategoryNewsWrapper>
+        <CategoryNews>
+          {categoryNews.map((item, index) => (
+            <CategoryNewsCard item={item} key={item.id} isFourth={(index + 1) % 4 === 0}/>
+          ))}
+        </CategoryNews>
+        <EditorsPickWrapper>
+          <EditorsPickText>EDITOR&apos;S PICK</EditorsPickText>
+
+          {headline && <EditorsPick item={headline} />}
+        </EditorsPickWrapper>
+      </CategoryNewsWrapper>
     </Container>
   );
 }

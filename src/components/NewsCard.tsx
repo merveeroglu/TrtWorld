@@ -12,23 +12,24 @@ interface Props {
   showDescription?: boolean;
   $latest?: boolean;
   isLastInRow?: boolean;
+  showDate?: boolean;
+  $categoryNews?:boolean;
 }
-const Wrapper = styled.div<{ $latest?: boolean; $isCenter?: boolean; $isLastInRow?: boolean }>`
+const Wrapper = styled.div<{ $latest?: boolean; $isCenter?: boolean; $isLastInRow?: boolean; $categoryNews?: boolean }>`
   display: flex;
   align-items: ${({ $isCenter }) => ($isCenter ? "center" : "flex-start")};  
   flex: 1;
   gap: 12px;
-  font-weight:bold;
   background-color :white ;
   border-right: ${({ $isLastInRow }) => ($isLastInRow ? "none" : "1px solid #cccccc98")};
-  padding-right: ${({ $isLastInRow }) => ($isLastInRow ? "0" : "40px")};
+  padding-right: ${({ $latest }) => ($latest ? "0" : "40px")};
 `;
 const Content = styled.div`
   display: flex;
   flex-direction: column;
 `;
 const StyledImage = styled(Image)`
-  width: 100%;
+ width: 100%;
   height: auto;
   object-fit: cover;
 `;
@@ -57,9 +58,9 @@ font-size: 15px;
 color: #808080d5;
 `
 
-const NewsCard = ({ item, showImage = true,showDescription=true, $latest = false, index = -1, isLastInRow = false }: Props) => {
+const NewsCard = ({ item, showImage = true,showDescription=true, $latest = false, index = -1, isLastInRow = false, showDate = false, $categoryNews=false }: Props) => {
   return (
-    <Wrapper $isCenter={index !== -1} $latest={$latest} $isLastInRow={isLastInRow}>
+    <Wrapper $isCenter={index !== -1} $latest={$latest} $isLastInRow={isLastInRow} $categoryNews={$categoryNews}>
       {index !== -1 && <Number>{index + 1}</Number>}
       <Content>
         {showImage && (
@@ -68,11 +69,13 @@ const NewsCard = ({ item, showImage = true,showDescription=true, $latest = false
             alt={item.title}
             width={120}
             height={80}
+           
           />
         )}
-        {$latest && <DateWrapper>{format(new Date(item.publishedDate), "dd MMM yyyy").toUpperCase()}</DateWrapper>}
+        <div>
+        {showDate && <DateWrapper>{format(new Date(item.publishedDate), "dd MMM yyyy").toUpperCase()}</DateWrapper>}
         <Title $latest={$latest} $isBold={index !== -1}>{item.title}</Title>
-        {showDescription && <Description $latest={$latest}>{item.description}</Description>}
+        {showDescription && <Description $latest={$latest}>{item.description}</Description>}</div>
       </Content>
     </Wrapper>
   );
