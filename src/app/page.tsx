@@ -1,103 +1,313 @@
-import Image from "next/image";
+"use client";
+import Headline from "@/components/Headline";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Loading from "./loading";
+import NewsCard from "@/components/NewsCard";
+import styled from "styled-components";
+import AuthorsPanelCard from "@/components/AuthorsPanelCard";
+
+interface Category {
+  contentId: number;
+  title: string;
+}
+
+interface Author {
+  userName: string;
+  firstName: string;
+  lastName: string;
+  path: string;
+}
+
+export interface NewsItem {
+  id: number;
+  type: string;
+  title: string;
+  description: string;
+  mainImageUrl: string;
+  overlayImageUrl: string;
+  thumbnailSquare: string;
+  categories: Category[];
+  metaTitle: string;
+  metaDescription: string;
+  showName: string;
+  showSlug: string;
+  path: string;
+  publishedDate: string;
+  authors: Author[];
+  showAuthor: boolean;
+  showByLine: boolean;
+  showSparkbox: boolean;
+}
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 30px 40px;
+  /* @media (max-width: 768px) {
+    margin: 0;
+  } */
+`;
+const TopWrapper = styled.div`
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 50px;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+`;
+
+const HeadlineWrapper = styled.div`
+  /* flex: 2; */
+  /* border-right: 1px solid #ccc;
+  padding-right: 20px;
+  margin-right: 20px; */
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+`;
+
+const NewsListWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-right: 1px solid #ccc;
+  padding-right: 30px;
+  @media (max-width: 480px) {
+    border-right: none;
+    padding-right: 0;
+  }
+`;
+// const RelatedStories = styled.div`
+//   display: flex;
+//   gap: 20px;
+//   > *:not(:last-child) {
+//     border-right: 1px solid #ccc;
+//     padding-right: 40px;
+//   }
+// `;
+const RelatedWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const PopularWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const RelatedText = styled.div`
+  color: #808080d5;
+  margin-bottom: 10px;
+`;
+const PopularList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); // repeat:belirli sayıda sütun oluşturmak için. auto-fit:mümkün olduğu kadar ekle
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+  > *:not(:last-child) {
+    border-right: 1px solid #ccc;
+    padding-right: 40px;
+  }
+`;
+const RelatedStories = styled.div`
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); // repeat:belirli sayıda sütun oluşturmak için. auto-fit:mümkün olduğu kadar ekle
+  gap: 20px;
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+  > *:not(:last-child) {
+    border-right: 1px solid #cccccc98;
+    padding-right: 40px;
+    @media (max-width: 1500px) {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+`;
+const LatestWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); // repeat:belirli sayıda sütun oluşturmak için. auto-fit:mümkün olduğu kadar ekle
+  gap: 40px;
+  margin-left: -70px;
+  margin-right: -70px;
+  background-color: #edf2f7;
+  padding: 55px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const PopularText = styled.div`
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
+const LeftGroup = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-right: 1px solid #ccc;
+  padding-right: 30px;
+  @media (max-width: 1000px) {
+    border-right: none;
+    padding-right: 0;
+  }
+  /* @media (max-width: 768px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  } */
+`;
+const RightGroup = styled.div`
+  display: flex;
+  flex: 1;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
+const AuthorsPanel = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 25px;
+`;
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [headline, setHeadline] = useState<NewsItem | null>(null);
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [related, setRelated] = useState<NewsItem[]>([]);
+  const [popular, setPopular] = useState<NewsItem[]>([]);
+  const [latest, setLatest] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState(false);
+  // console.log("headline2", headline);
+  // console.log("news2", news);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const fetchData = async () => {
+    setLoading(true);
+    const [
+      headlineRes,
+      newsRes,
+      relatedRes,
+      popularRes,
+      latestRes,
+      categoryNewsRes,
+    ] = await Promise.all([
+      axios.get("http://localhost:4000/headline"),
+      axios.get("http://localhost:4000/news"),
+      axios.get("http://localhost:4000/related"),
+      axios.get("http://localhost:4000/popular"),
+      axios.get("http://localhost:4000/latest"),
+      axios.get("http://localhost:4000/categoryNews"),
+    ]);
+    console.log("categoryNewsRes", categoryNewsRes);
+    setHeadline(headlineRes.data[0]);
+    setNews(newsRes.data);
+    setRelated(relatedRes.data);
+    setPopular(popularRes.data);
+    setLatest(latestRes.data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  if (loading) return <Loading />;
+
+  return (
+    <Container>
+      <TopWrapper>
+        <LeftGroup>
+          <HeadlineWrapper>
+            {headline && <Headline headline={headline} />}
+          </HeadlineWrapper>
+          <RelatedWrapper>
+            <RelatedText>RELATED STORIES</RelatedText>
+            <RelatedStories>
+              {related.map((item) => (
+                <NewsCard
+                  item={item}
+                  key={item.id}
+                  showImage={false}
+                  showDescription={false}
+                />
+              ))}
+            </RelatedStories>
+          </RelatedWrapper>
+        </LeftGroup>
+
+        <RightGroup>
+          <NewsListWrapper>
+            {news.map((item) => (
+              <NewsCard item={item} key={item.id} />
+            ))}
+          </NewsListWrapper>
+
+          <AuthorsPanel>
+            {related.map((item) => (
+              <AuthorsPanelCard item={item} key={item.id} />
+            ))}
+          </AuthorsPanel>
+        </RightGroup>
+      </TopWrapper>
+
+      <PopularWrapper>
+        <PopularText>POPULAR TODAY</PopularText>
+        <PopularList>
+          {popular.map((item, i) => (
+            <NewsCard
+              item={item}
+              key={item.id}
+              showImage={false}
+              showDescription={false}
+              index={i}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          ))}
+        </PopularList>
+      </PopularWrapper>
+      <LatestWrapper>
+        {latest.map((item) => (
+          <NewsCard
+            item={item}
+            key={item.id}
+            showDescription={false}
+            $latest={true}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        ))}
+      </LatestWrapper>
+    </Container>
   );
 }

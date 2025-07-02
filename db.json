@@ -1,0 +1,958 @@
+{
+  "metadata": {
+    "siteUrl": "https://trtworld.com",
+    "pageTitle": "TRT World - Breaking News, Live Coverage, Opinions and Videos",
+    "siteLanguage": "en_US",
+    "pageDescription": "Breaking news, live coverage, opinions, features, in-depth analysis and videos from TRT World, 24/7.",
+    "pageImage": "https://cdn-i.pr.trt.com.tr/trtworld/16275646.png"
+  },
+  "latest": [
+    {
+      "id": 18269747,
+      "type": "article",
+      "title": "Bomb blast at Pakistan seminary kills top cleric, 4 others",
+      "description": "Provincial police chief says the attack appears to be a suicide bombing, with bomb experts still investigating. No group has claimed responsibility yet.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/9554109_0-504-4928-2775.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682879, "title": "Asia" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/asia/bomb-blast-at-pakistan-seminary-kills-top-cleric-4-others-18269747",
+      "publishedDate": "2025-02-28T11:30:00.601Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269739,
+      "type": "article",
+      "title": "Türkiye-Africa Media Forum today",
+      "description": "Turkish Communications Director Fahrettin Altun stresses Türkiye’s desire to look at Africa \"not through its negative aspects, but through its true potential and dynamism\".",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583638_0-0-2045-1152.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683239, "title": "Turkiye" },
+        { "contentId": 12682877, "title": "Africa" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/turkiye/turkiye-africa-media-forum-today-18269739",
+      "publishedDate": "2025-02-28T11:27:25.310Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269734,
+      "type": "article",
+      "title": "PKK/YPG attacks severely damage healthcare system in Syria's Manbij",
+      "description": "Continuing attacks by the terrorist group take their toll on patients, particularly the elderly, as healthcare workers struggle to work under constant fear and panic.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583518_0-545-5760-3243.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/middle-east/pkkypg-attacks-severely-damage-healthcare-system-in-syrias-manbij-18269734",
+      "publishedDate": "2025-02-28T09:50:02.366Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269728,
+      "type": "article",
+      "title": "Glacier burst in Indian Himalayas, leaving dozens trapped",
+      "description": "Rescue teams are struggling to reach the site of a glacier burst in Uttarakhand, where 47 people are feared trapped.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583478_0-94-1023-576.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682879, "title": "Asia" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/asia/glacier-burst-in-indian-himalayas-leaving-dozens-trapped-18269728",
+      "publishedDate": "2025-02-28T09:29:02.485Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    }
+  ],
+  "headline": [
+    {
+      "id": 13155179,
+      "type": "article",
+      "title": "Türkiye's elections: Polls close in some European countries, US",
+      "description": "Over 1.6 million Turkish citizens living abroad have cast their votes for Türkiye's upcoming presidential and parliamentary elections.",
+      "mainImageUrl": "https://cdn-i.pr.trt.com.tr/trtworld/16358427_0-57-8256-4649.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683239, "title": "Turkiye" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/turkiye/turkiyes-elections-polls-close-in-some-european-countries-us-13155179",
+      "publishedDate": "2023-05-08T06:12:19.102Z",
+      "authors": [
+        {
+          "userName": "Sara.SLEIMAN",
+          "firstName": "Sara",
+          "lastName": "SLEIMAN",
+          "path": "/author/sara-sleiman"
+        }
+      ],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    }
+  ],
+  "news": [
+    {
+      "id": 12977396,
+      "type": "article",
+      "title": "South Africa's Ramaposa rows back from pledge to quit ICC",
+      "description": "South African President Cyril Ramaphosa a day earlier said his ANC party had resolved that his country should quit the ICC, which last month issued an arrest warrant against Russian President Vladimir Putin.",
+      "mainImageUrl": "https://cdn-i.pr.trt.com.tr/trtworld/16275004_0-183-4498-2533.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682877, "title": "Africa" },
+        { "contentId": 12682883, "title": "Europe" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/africa/south-africas-ramaposa-rows-back-from-pledge-to-quit-icc-12977396",
+      "publishedDate": "2023-04-26T10:25:42.760Z",
+      "authors": [
+        {
+          "userName": "meryem.demirhan",
+          "firstName": "Meryem",
+          "lastName": "Demirhan",
+          "path": "/author/meryem-demirhan"
+        }
+      ],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    }
+  ],
+
+  "content": {
+    "id": 17811425,
+    "title": "Palestinian detainees in Israeli jails increased 130% after October 7",
+    "description": "Head of Prisoners and Ex-Prisoners Affairs Authority says nobody knows number of Palestinian detainees from Gaza.",
+    "body": [
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>A Palestinian official said the number of Palestinian detainees in Israeli jails since October 7 has increased by 130 percent.</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>Speaking to Anadolu, Qaddoura Fares, head of the Prisoners and Ex-Prisoners Affairs Authority, described the situation of Palestinian detainees in Israeli jails as \"catastrophic and extremely dangerous.\" </p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>He noted that the detainees are exposed to torture and systematic assaults, and that \"the journey of torture starts from the moment of storming into the house and assaulting the detainee and the family, and sabotaging the house properties.\"</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>He said the past winter was the most difficult winter season for the detainees as the Israeli prison authorities deprived them of proper clothes and blankets, as well as regularly stripping them of their clothes.</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>The Palestinian official added that the number of Palestinian detainees in Israeli jails before October 7 was nearly 5 ,000, but now the number is expected to reach 12,000, including the detainees from Gaza.</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>\"Nobody knows the number of detainees from Gaza, these are just expectations, but what is documented of detainees in Israeli jails reaches 9,500,\" Fares added.</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>He noted that among the detainees, there are some 80 women, over 200 children, and nearly 4,000 held under Israeli administrative detention without charge or trial.</p>"
+      },
+      {
+        "blockType": "youtube",
+        "metadata": { "url": "https://youtu.be/o1AAznfrqZY" },
+        "value": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/o1AAznfrqZY?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"More than 9,000 Palestinians currently detained by Israel\"></iframe>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p><strong>Over 9,500 detainees in Israeli jails</strong> </p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>The detainees include 80 women and more than 200 children, the Commission of Detainees' Affairs, the Palestinian Prisoner Society and Addameer Prisoner Support and Human Rights Association said in a joint statement marking the Palestinian Prisoner’s Day, which falls on April 17.</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>“This figure does not include Palestinians held by Israeli forces in Gaza,” the statement said.</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>Among the detainees are 3,660 Palestinians held without trial or charge under Israel’s notorious policy of administrative detention, the statement said.</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>“More than 40 children and 20 women are held administratively without trial or charge,” it added.</p>"
+      },
+      {
+        "blockType": "text",
+        "metadata": {},
+        "value": "<p>There are 56 journalists held in Israeli jails, including four women reporters, the statement said.</p>"
+      },
+      {
+        "id": 17248187,
+        "type": "article",
+        "title": "UNRWA exposes disturbing Israeli abuse of Palestinian detainees — report",
+        "description": "Alarming UNRWA findings reveal mistreatment, including beatings and dog attacks, of Palestinian detainees by Israeli authorities.",
+        "mainImageUrl": "https://cdn-i.pr.trt.com.tr/trtworld/17767726_0-0-6000-3378.jpeg",
+        "overlayImageUrl": "https://cdn-i.pr.trt.com.tr/trtworld/f_article_6b79a9c5c1d2c1408a83b63b39a51e49.jpeg",
+        "thumbnailSquare": "",
+        "categories": [
+          { "contentId": 12682254, "title": "Home Page" },
+          { "contentId": 12683241, "title": "Middle East" }
+        ],
+        "metaTitle": "",
+        "metaDescription": "",
+        "showName": "",
+        "showSlug": "",
+        "path": "/middle-east/unrwa-exposes-disturbing-israeli-abuse-of-palestinian-detainees-report-17248187",
+        "publishedDate": "2024-03-06T10:21:32.302Z",
+        "authors": [
+          {
+            "userName": "Staff.Reporter",
+            "firstName": "Staff",
+            "lastName": "Reporter",
+            "path": "/author/staff-reporter"
+          }
+        ],
+        "showAuthor": false,
+        "showByLine": false,
+        "showSparkbox": false,
+        "blockType": "content"
+      }
+    ],
+    "path": "/middle-east/palestinian-detainees-in-israeli-jails-increased-130-after-october-7-17811425",
+    "type": "article",
+    "fields": {
+      "search_title": {
+        "text": "Palestinian detainees in Israeli jails increased 130% after October 7"
+      },
+      "search_description": {
+        "text": "A Palestinian official said the number of Palestinian detainees in Israeli jails since October 7 has increased by 130 percent."
+      },
+      "topic_slug": { "text": "middle-east" },
+      "mainImage": {
+        "type": "image",
+        "assetId": 17694618,
+        "key": "trtworld/17694618_0-396-3855-2171.jpeg",
+        "bucket": "port-production-asset-public-image",
+        "cdnUrl": "https://cdn-i.pr.trt.com.tr/trtworld/",
+        "fileName": "17694618_0-396-3855-2171.jpeg",
+        "url": "https://cdn-i.pr.trt.com.tr/trtworld/17694618_0-396-3855-2171.jpeg",
+        "title": "An Israeli soldier stands by a truck with Palestinian detainees in it, Gaza, December 8, 2023. / Photo: Reuters",
+        "width": 3855,
+        "height": 2568,
+        "source": "Reuters",
+        "author": "Yossi Zeliger"
+      },
+      "authors": [
+        {
+          "firstName": { "text": "Staff" },
+          "lastName": { "text": "Reporter" },
+          "path": "/author/staff-reporter"
+        }
+      ],
+      "relatedStory": {
+        "id": 12709123,
+        "type": "article",
+        "title": "Return to the Motherland",
+        "description": "The Israeli occupation of Palestine manifests in several shapes, and often the exertion of dominance over Palestinians takes form through pyschological warfare. This short narrative takes a look at one Palestinian's trip to her homeland.",
+        "mainImageUrl": "https://cdn-i.pr.trt.com.tr/trtworld/0m_8478-trtworld-393300-432251.jpg",
+        "overlayImageUrl": "",
+        "thumbnailSquare": "",
+        "categories": [
+          { "contentId": 12683235, "title": "Opinion" },
+          { "contentId": 12682254, "title": "Home Page" }
+        ],
+        "metaTitle": "",
+        "metaDescription": "",
+        "showName": "",
+        "showSlug": "",
+        "path": "/opinion/return-to-the-motherland-12709123",
+        "publishedDate": "2017-07-04T00:00:00.000Z",
+        "authors": [
+          {
+            "userName": "nadine.sayegh",
+            "firstName": "Nadine",
+            "lastName": "Sayegh",
+            "bio": "Nadine Sayegh is a multidisciplinary writer and researcher covering the Arab world. She has covered topics including gender in the region, countering violent extremism, the Occupied Palestinian Territories, amongst other social and political issues.",
+            "mainImage": "https://cdn-i.pr.trt.com.tr/trtworld/0u_131.jpg",
+            "path": "/author/nadine-sayegh"
+          }
+        ],
+        "showAuthor": false,
+        "showByLine": false,
+        "showSparkbox": false
+      },
+      "sources": [{ "key": "aa", "value": "AA", "metadata": {} }],
+      "topics": [
+        { "contentId": 12682254, "title": "Home Page", "slug": "home-page" },
+        { "contentId": 12683241, "title": "Middle East", "slug": "middle-east" }
+      ],
+      "team": { "key": "news", "value": "News", "metadata": {} },
+      "contentFormat": { "key": "news", "value": "News", "metadata": {} },
+      "country": {
+        "key": "pse",
+        "value": "Palestine",
+        "metadata": {
+          "code": "PSE",
+          "region": "Asia",
+          "subregion": "Western Asia"
+        }
+      },
+      "tags": [
+        { "key": "palestine", "value": "Palestine", "metadata": {} },
+        { "key": "prisoners-day", "value": "Prisoners Day", "metadata": {} },
+        {
+          "key": "palestinian-prisoners",
+          "value": "Palestinian Prisoners",
+          "metadata": {}
+        },
+        {
+          "key": "palestinian-detainees",
+          "value": " Palestinian detainees",
+          "metadata": {}
+        },
+        { "key": "october-7", "value": "October 7", "metadata": {} }
+      ],
+      "overlayImage": {
+        "type": "image",
+        "key": "trtworld/f_article_4b8468f2e56a26c9e324c99651eff53c.jpeg",
+        "bucket": "port-production-asset-public-image",
+        "cdnUrl": "https://cdn-i.pr.trt.com.tr/trtworld/",
+        "fileName": "f_article_4b8468f2e56a26c9e324c99651eff53c.jpeg",
+        "url": "https://cdn-i.pr.trt.com.tr/trtworld/f_article_4b8468f2e56a26c9e324c99651eff53c.jpeg",
+        "width": 3855,
+        "height": 2568
+      }
+    },
+    "metadata": { "show_sparkbox": "true" },
+    "site": "trtworld",
+    "viewCount": 0,
+    "published": { "date": "2024-04-17T11:19:59.677Z" },
+    "paths": [
+      "/middle-east/palestinian-detainees-in-israeli-jails-increased-130-after-october-7-17811425"
+    ]
+  },
+  "related": [
+    {
+      "id": 18269575,
+      "type": "article",
+      "title": "Live blog: Egypt hosts mediators to discuss next steps of Gaza truce",
+      "description": "Ceasefire pausing Israel's war on Gaza — which has reportedly killed 48,365+ Palestinians, a figure revised by officials to 62,000+, having added thousands who are missing and now presumed dead — enters its 41st day.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583420_0-164-3000-1689.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/middle-east/live-blog-egypt-hosts-mediators-to-discuss-next-steps-of-gaza-truce-18269575",
+      "publishedDate": "2025-02-28T08:22:44.895Z",
+      "authors": [
+        {
+          "mainImage": "https://cdn-i.pr.trt.com.tr/trtworld/17164014_0-0-954-921.jpeg",
+          "firstName": "Noureldein",
+          "lastName": "Ghanem",
+          "bio": "Noureldein Ghanem is an Assistant Producer at TRT World",
+          "path": "/author/noureldein-ghanem-7782"
+        }
+      ],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": true
+    },
+    {
+      "id": 18269608,
+      "type": "article",
+      "title": "Rights group accuses Israel of 'heinous' torture of Palestinian prisoners",
+      "description": "Euro-Mediterranean observer reports severe physical and psychological abuse of Palestinian prisoners before their release, with some suffering extreme medical neglect and torture in Israeli custody.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583219_0-53-5500-3100.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683245, "title": "Discrimination" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/discrimination/rights-group-accuses-israel-of-heinous-torture-of-palestinian-prisoners-18269608",
+      "publishedDate": "2025-02-28T05:39:38.133Z",
+      "authors": [
+        {
+          "userName": "alitopchi",
+          "firstName": "Ali",
+          "lastName": "Topchi",
+          "twitter": "@atopchi",
+          "mainImage": "https://cdn-i.pr.trt.com.tr/trtworld/0u_10.jpg",
+          "path": "/author/ali-topchi"
+        }
+      ],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": true
+    },
+    {
+      "id": 18269601,
+      "type": "article",
+      "title": "Israeli army admits 'colossal failure' in October 7 probe",
+      "description": "The investigation says the army relied on flawed strategic assumptions and overconfidence in its intelligence superiority.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/17746273_0-83-1600-901.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/middle-east/israeli-army-admits-colossal-failure-in-october-7-probe-18269601",
+      "publishedDate": "2025-02-28T01:19:43.276Z",
+      "authors": [
+        {
+          "mainImage": "https://cdn-i.pr.trt.com.tr/trtworld/17164014_0-0-954-921.jpeg",
+          "firstName": "Noureldein",
+          "lastName": "Ghanem",
+          "bio": "Noureldein Ghanem is an Assistant Producer at TRT World",
+          "path": "/author/noureldein-ghanem-7782"
+        }
+      ],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": true
+    },
+    {
+      "id": 18269240,
+      "type": "article",
+      "title": "Live blog: Israeli military admits its failure on October 7",
+      "description": "Ceasefire pausing Israel's war on Gaza — which has reportedly killed 48,365+ Palestinians, a figure revised by officials to 62,000+, having added thousands who are missing and now presumed dead — enters its 40th day.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21582337_0-307-6720-3784.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/middle-east/live-blog-israeli-military-admits-its-failure-on-october-7-18269240",
+      "publishedDate": "2025-02-27T19:24:17.778Z",
+      "authors": [
+        {
+          "mainImage": "https://cdn-i.pr.trt.com.tr/trtworld/17164014_0-0-954-921.jpeg",
+          "firstName": "Noureldein",
+          "lastName": "Ghanem",
+          "bio": "Noureldein Ghanem is an Assistant Producer at TRT World",
+          "path": "/author/noureldein-ghanem-7782"
+        },
+        {
+          "userName": "Staff.Reporter",
+          "firstName": "Staff",
+          "lastName": "Reporter",
+          "path": "/author/staff-reporter"
+        }
+      ],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": true
+    },
+    {
+      "id": 18269461,
+      "type": "article",
+      "title": "Israeli attempts to obstruct release of our prisoners have failed: Hamas",
+      "description": "\"The enemy has no other option but to start the negotiations of the second phase\" of the Gaza truce agreement, Palestinian group Hamas says.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21581482_0-39-1200-675.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/middle-east/israeli-attempts-to-obstruct-release-of-our-prisoners-have-failed-hamas-18269461",
+      "publishedDate": "2025-02-27T14:30:15.813Z",
+      "authors": [
+        {
+          "userName": "Staff.Reporter",
+          "firstName": "Staff",
+          "lastName": "Reporter",
+          "path": "/author/staff-reporter"
+        }
+      ],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": true
+    }
+  ],
+  "popular": [
+    {
+      "id": 18269747,
+      "type": "article",
+      "title": "Bomb blast at Pakistan seminary kills top cleric, 4 others",
+      "description": "Provincial police chief says the attack appears to be a suicide bombing, with bomb experts still investigating. No group has claimed responsibility yet.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/9554109_0-504-4928-2775.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682879, "title": "Asia" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/asia/bomb-blast-at-pakistan-seminary-kills-top-cleric-4-others-18269747",
+      "publishedDate": "2025-02-28T11:30:00.601Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269739,
+      "type": "article",
+      "title": "Türkiye-Africa Media Forum today",
+      "description": "Turkish Communications Director Fahrettin Altun stresses Türkiye’s desire to look at Africa \"not through its negative aspects, but through its true potential and dynamism\".",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583638_0-0-2045-1152.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683239, "title": "Turkiye" },
+        { "contentId": 12682877, "title": "Africa" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/turkiye/turkiye-africa-media-forum-today-18269739",
+      "publishedDate": "2025-02-28T11:27:25.310Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269734,
+      "type": "article",
+      "title": "PKK/YPG attacks severely damage healthcare system in Syria's Manbij",
+      "description": "Continuing attacks by the terrorist group take their toll on patients, particularly the elderly, as healthcare workers struggle to work under constant fear and panic.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583518_0-545-5760-3243.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/middle-east/pkkypg-attacks-severely-damage-healthcare-system-in-syrias-manbij-18269734",
+      "publishedDate": "2025-02-28T09:50:02.366Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269728,
+      "type": "article",
+      "title": "Glacier burst in Indian Himalayas, leaving dozens trapped",
+      "description": "Rescue teams are struggling to reach the site of a glacier burst in Uttarakhand, where 47 people are feared trapped.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583478_0-94-1023-576.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682879, "title": "Asia" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/asia/glacier-burst-in-indian-himalayas-leaving-dozens-trapped-18269728",
+      "publishedDate": "2025-02-28T09:29:02.485Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269705,
+      "type": "article",
+      "title": "UN rights chief slams Thailand’s deportation of Uighurs to China",
+      "description": "Volker Turk urges China to disclose whereabouts of deported Uighurs, calls on Thailand to prevent further expulsions.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21580802_426-760-4322-2434.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683245, "title": "Discrimination" },
+        { "contentId": 12682879, "title": "Asia" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/discrimination/un-rights-chief-slams-thailands-deportation-of-uighurs-to-china-18269705",
+      "publishedDate": "2025-02-28T08:32:17.844Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    }
+  ],
+  "categoryNews": [
+    {
+      "id": 18269747,
+      "type": "article",
+      "title": "Bomb blast at Pakistan seminary kills top cleric, 4 others",
+      "description": "Provincial police chief says the attack appears to be a suicide bombing, with bomb experts still investigating. No group has claimed responsibility yet.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/9554109_0-504-4928-2775.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682879, "title": "Asia" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/asia/bomb-blast-at-pakistan-seminary-kills-top-cleric-4-others-18269747",
+      "publishedDate": "2025-02-28T11:30:00.601Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269739,
+      "type": "article",
+      "title": "Türkiye-Africa Media Forum today",
+      "description": "Turkish Communications Director Fahrettin Altun stresses Türkiye’s desire to look at Africa \"not through its negative aspects, but through its true potential and dynamism\".",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583638_0-0-2045-1152.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683239, "title": "Turkiye" },
+        { "contentId": 12682877, "title": "Africa" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/turkiye/turkiye-africa-media-forum-today-18269739",
+      "publishedDate": "2025-02-28T11:27:25.310Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269734,
+      "type": "article",
+      "title": "PKK/YPG attacks severely damage healthcare system in Syria's Manbij",
+      "description": "Continuing attacks by the terrorist group take their toll on patients, particularly the elderly, as healthcare workers struggle to work under constant fear and panic.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583518_0-545-5760-3243.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/middle-east/pkkypg-attacks-severely-damage-healthcare-system-in-syrias-manbij-18269734",
+      "publishedDate": "2025-02-28T09:50:02.366Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269728,
+      "type": "article",
+      "title": "Glacier burst in Indian Himalayas, leaving dozens trapped",
+      "description": "Rescue teams are struggling to reach the site of a glacier burst in Uttarakhand, where 47 people are feared trapped.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583478_0-94-1023-576.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682879, "title": "Asia" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/asia/glacier-burst-in-indian-himalayas-leaving-dozens-trapped-18269728",
+      "publishedDate": "2025-02-28T09:29:02.485Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269705,
+      "type": "article",
+      "title": "UN rights chief slams Thailand’s deportation of Uighurs to China",
+      "description": "Volker Turk urges China to disclose whereabouts of deported Uighurs, calls on Thailand to prevent further expulsions.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21580802_426-760-4322-2434.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683245, "title": "Discrimination" },
+        { "contentId": 12682879, "title": "Asia" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/discrimination/un-rights-chief-slams-thailands-deportation-of-uighurs-to-china-18269705",
+      "publishedDate": "2025-02-28T08:32:17.844Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269575,
+      "type": "article",
+      "title": "Live blog: Egypt hosts mediators to discuss next steps of Gaza truce",
+      "description": "Ceasefire pausing Israel's war on Gaza — which has reportedly killed 48,365+ Palestinians, a figure revised by officials to 62,000+, having added thousands who are missing and now presumed dead — enters its 41st day.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583420_0-164-3000-1689.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/middle-east/live-blog-egypt-hosts-mediators-to-discuss-next-steps-of-gaza-truce-18269575",
+      "publishedDate": "2025-02-28T08:22:44.895Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269691,
+      "type": "article",
+      "title": "US human rights group refers Biden to ICC for complicity in Israeli crimes",
+      "description": "The submission demands the prosecution of US accomplices, exposing the extent of US military and political support for Israeli war crimes, including over $17.9 billion in weapon transfers.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583404_0-460-7405-4170.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683233, "title": "Magazine" },
+        { "contentId": 12683241, "title": "Middle East" },
+        { "contentId": 12683251, "title": "US & Canada" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/magazine/us-human-rights-group-refers-biden-to-icc-for-complicity-in-israeli-crimes-18269691",
+      "publishedDate": "2025-02-28T08:17:02.167Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269673,
+      "type": "article",
+      "title": "India, EU agree to finalise free trade pact in 2025",
+      "description": "The agreement focuses on diversifying critical value chains and strengthening India's and the bloc's strategic partnership amidst rising geopolitical tensions.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583327_0-561-5424-3054.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683237, "title": "Business" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/business/india-eu-agree-to-finalise-free-trade-pact-in-2025-18269673",
+      "publishedDate": "2025-02-28T07:50:36.370Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269665,
+      "type": "article",
+      "title": "US, Russia take steps to ease diplomatic missions in Istanbul talks",
+      "description": "US raises concerns over banking access, contracted services and stable staffing at its Moscow embassy, says State Department",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/203902_0-142-3127-1761.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682883, "title": "Europe" },
+        { "contentId": 12683251, "title": "US & Canada" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/europe/us-russia-take-steps-to-ease-diplomatic-missions-in-istanbul-talks-18269665",
+      "publishedDate": "2025-02-28T07:24:49.261Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269608,
+      "type": "article",
+      "title": "Rights group accuses Israel of 'heinous' torture of Palestinian prisoners",
+      "description": "Euro-Mediterranean observer reports severe physical and psychological abuse of Palestinian prisoners before their release, with some suffering extreme medical neglect and torture in Israeli custody.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21583219_0-53-5500-3100.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12683245, "title": "Discrimination" },
+        { "contentId": 12683241, "title": "Middle East" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/discrimination/rights-group-accuses-israel-of-heinous-torture-of-palestinian-prisoners-18269608",
+      "publishedDate": "2025-02-28T05:39:38.133Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269609,
+      "type": "article",
+      "title": "Vietnam to support deportations from US after tariff threats, lawyer says",
+      "description": "More than 8,600 Vietnamese nationals who are currently facing \"an order of removal\" from the US were migrants who entered the country usually as refugees before 1995, following the end of the US war in Vietnam.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21582362_0-405-6192-3487.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682879, "title": "Asia" },
+        { "contentId": 12683251, "title": "US & Canada" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/asia/vietnam-to-support-deportations-from-us-after-tariff-threats-lawyer-says-18269609",
+      "publishedDate": "2025-02-28T05:20:12.725Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    },
+    {
+      "id": 18269604,
+      "type": "article",
+      "title": "Over 8,500 people killed since January in eastern DRC violence",
+      "description": "DRC Health Minister Samuel-Roger Kamba says that over 5,700 have also been wounded.",
+      "mainImageUrl": "https://images-cdn.trtworld.com/trtworld/21577414_0-279-5214-2936.jpeg",
+      "overlayImageUrl": "",
+      "thumbnailSquare": "",
+      "categories": [
+        { "contentId": 12682254, "title": "Home Page" },
+        { "contentId": 12682877, "title": "Africa" }
+      ],
+      "metaTitle": "",
+      "metaDescription": "",
+      "showName": "",
+      "showSlug": "",
+      "path": "/africa/over-8500-people-killed-since-january-in-eastern-drc-violence-18269604",
+      "publishedDate": "2025-02-28T02:44:55.005Z",
+      "authors": [],
+      "showAuthor": false,
+      "showByLine": false,
+      "showSparkbox": false
+    }
+  ]
+}
