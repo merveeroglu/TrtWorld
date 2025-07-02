@@ -45,9 +45,11 @@ const Container = styled.div`
   flex-direction: column;
   gap: 30px;
   margin: 30px 40px;
-  /* @media (max-width: 768px) {
-    margin: 0;
-  } */
+  @media (max-width: 1000px) {
+    gap: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
 `;
 const TopWrapper = styled.div`
   display: flex;
@@ -56,18 +58,17 @@ const TopWrapper = styled.div`
   padding-bottom: 50px;
   @media (max-width: 1000px) {
     flex-direction: column;
+    gap: 0;
+    border-bottom: none;
+    padding-bottom: 0;
   }
 `;
 
 const HeadlineWrapper = styled.div`
-  /* flex: 2; */
-  /* border-right: 1px solid #ccc;
-  padding-right: 20px;
-  margin-right: 20px; */
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: 100%;
-    padding: 0;
-    margin: 0;
+    padding-top: 0;
+    margin-top: 0;
   }
 `;
 
@@ -76,12 +77,6 @@ const NewsListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border-right: 1px solid #ccc;
-  padding-right: 30px;
-  @media (max-width: 480px) {
-    border-right: none;
-    padding-right: 0;
-  }
 `;
 // const RelatedStories = styled.div`
 //   display: flex;
@@ -108,18 +103,43 @@ const PopularList = styled.div`
   grid-template-columns: repeat(
     auto-fit,
     minmax(250px, 1fr)
-  ); // repeat:belirli sayıda sütun oluşturmak için. auto-fit:mümkün olduğu kadar ekle
+  );
   gap: 20px;
-
+  > * {
+    border-right: 1px solid #ccc;
+    padding-right: 40px;
+  }
+  > *:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+  @media (min-width: 1001px) and (max-width: 1500px) {
+    grid-template-columns: repeat(3, 1fr);
+    > *:nth-child(3n) {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+  @media (min-width: 1501px) {
+    grid-template-columns: repeat(4, 1fr);
+    > *:nth-child(4n) {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    > *:nth-child(2n) {
+      border-right: none;
+      padding-right: 0;
+    }
   }
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
-  }
-  > *:not(:last-child) {
-    border-right: 1px solid #ccc;
-    padding-right: 40px;
+    > * {
+      border-right: none;
+      padding-right: 0;
+    }
   }
 `;
 const RelatedStories = styled.div`
@@ -127,23 +147,48 @@ const RelatedStories = styled.div`
   grid-template-columns: repeat(
     auto-fit,
     minmax(200px, 1fr)
-  ); // repeat:belirli sayıda sütun oluşturmak için. auto-fit:mümkün olduğu kadar ekle
+  );
   gap: 20px;
-
+  > * {
+    border-right: 1px solid #cccccc98;
+    padding-right: 40px;
+  }
+  > *:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
   @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
+    > * {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+  @media (min-width: 1001px) and (max-width: 1500px) {
+    grid-template-columns: repeat(3, 1fr);
+    > *:nth-child(3n) {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+  @media (min-width: 1501px) {
+    grid-template-columns: repeat(4, 1fr);
+    > *:nth-child(4n) {
+      border-right: none;
+      padding-right: 0;
+    }
   }
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    > *:nth-child(2n) {
+      border-right: none;
+      padding-right: 0;
+    }
   }
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
-  }
-  > *:not(:last-child) {
-    border-right: 1px solid #cccccc98;
-    padding-right: 40px;
-    @media (max-width: 1500px) {
+    > * {
       border-right: none;
       padding-right: 0;
     }
@@ -257,14 +302,19 @@ export default function Home() {
           <RelatedWrapper>
             <RelatedText>RELATED STORIES</RelatedText>
             <RelatedStories>
-              {related.map((item) => (
-                <NewsCard
-                  item={item}
-                  key={item.id}
-                  showImage={false}
-                  showDescription={false}
-                />
-              ))}
+              {related.map((item, idx) => {
+                const columns = Math.floor(window.innerWidth >= 1000 ? window.innerWidth / 220 : 1);
+                const isLastInRow = columns > 1 ? (idx + 1) % columns === 0 : false;
+                return (
+                  <NewsCard
+                    item={item}
+                    key={item.id}
+                    showImage={false}
+                    showDescription={false}
+                    isLastInRow={isLastInRow}
+                  />
+                );
+              })}
             </RelatedStories>
           </RelatedWrapper>
         </LeftGroup>

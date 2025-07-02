@@ -11,12 +11,24 @@ interface Props {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+    @media (max-width: 1000px) {
+    margin: 0;
+    padding: 0;
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 const StyledImage = styled(Image)`
   width: 100%;
   height: auto;
   object-fit: cover;
+    @media (max-width: 1000px) {
+    border-radius: 0;
+  }
     @media (max-width: 768px) {
     margin: 0;
     padding: 0;
@@ -29,6 +41,11 @@ const Title = styled.h2`
   font-weight: bold;
   line-height:40px;
   text-transform: capitalize;
+      @media (max-width: 1000px) {
+    margin-inline: 40px;
+
+
+  }
 `;
 
 const Headline = ({ headline }: Props) => {

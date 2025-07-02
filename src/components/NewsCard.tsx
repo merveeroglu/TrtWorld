@@ -11,15 +11,17 @@ interface Props {
   index?: number;
   showDescription?: boolean;
   $latest?: boolean;
+  isLastInRow?: boolean;
 }
-const Wrapper = styled.div<{ $latest?: boolean; $isCenter?: boolean }>`
+const Wrapper = styled.div<{ $latest?: boolean; $isCenter?: boolean; $isLastInRow?: boolean }>`
   display: flex;
   align-items: ${({ $isCenter }) => ($isCenter ? "center" : "flex-start")};  
   flex: 1;
-  gap: 12px; 
+  gap: 12px;
   font-weight:bold;
   background-color :white ;
-         
+  border-right: ${({ $isLastInRow }) => ($isLastInRow ? "none" : "1px solid #cccccc98")};
+  padding-right: ${({ $isLastInRow }) => ($isLastInRow ? "0" : "40px")};
 `;
 const Content = styled.div`
   display: flex;
@@ -55,9 +57,9 @@ font-size: 15px;
 color: #808080d5;
 `
 
-const NewsCard = ({ item, showImage = true,showDescription=true, $latest = false, index = -1 }: Props) => {
+const NewsCard = ({ item, showImage = true,showDescription=true, $latest = false, index = -1, isLastInRow = false }: Props) => {
   return (
-    <Wrapper $isCenter={index !== -1}>
+    <Wrapper $isCenter={index !== -1} $latest={$latest} $isLastInRow={isLastInRow}>
       {index !== -1 && <Number>{index + 1}</Number>}
       <Content>
         {showImage && (
