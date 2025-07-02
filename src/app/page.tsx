@@ -258,7 +258,10 @@ const CategoryNews = styled.div`
   padding-right: 20px;
   display: flex;
   flex-direction: column;
-
+  @media (max-width: 1000px) {
+    border-right: none;
+    padding-right: 0;
+  }
   > *:not(:last-child) {
     margin-bottom: 20px;
     border-bottom: 1px solid #ccc;
@@ -268,14 +271,15 @@ const CategoryNews = styled.div`
 const EditorsPickWrapper = styled.div`
   flex: 0.7;
   padding: 15px;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 const EditorsPickText = styled.h2`
   font-weight: bold;
   margin-bottom: 15px;
   text-align: start;
-
 `;
-
 
 export default function Home() {
   const [headline, setHeadline] = useState<NewsItem | null>(null);
@@ -393,12 +397,15 @@ export default function Home() {
       <CategoryNewsWrapper>
         <CategoryNews>
           {categoryNews.map((item, index) => (
-            <CategoryNewsCard item={item} key={item.id} isFourth={(index + 1) % 4 === 0}/>
+            <CategoryNewsCard
+              item={item}
+              key={item.id}
+              isFourth={(index + 1) % 4 === 0}
+            />
           ))}
         </CategoryNews>
         <EditorsPickWrapper>
           <EditorsPickText>EDITOR&apos;S PICK</EditorsPickText>
-
           {headline && <EditorsPick item={headline} />}
         </EditorsPickWrapper>
       </CategoryNewsWrapper>

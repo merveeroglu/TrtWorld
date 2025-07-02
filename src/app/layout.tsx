@@ -4,8 +4,9 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaBars } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 const RedDot = () => (
   <span
     style={{
@@ -71,34 +73,33 @@ const menu = [
     ),
     url: "/live",
   },
-  { name: <FaSearch />, url: "/search" },
+];
+const menuWithoutIcons = [
+  { name: "NEWS", url: "/news" },
+  { name: "FEATURES", url: "/features" },
+  { name: "TOPICS", url: "/topics" },
+  { name: "VIDEO", url: "/video" },
+  { name: "LIVE", url: "/live" },
 ];
 
-// Styled Components
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px 10px 20px;
+  padding: 10px 20px;
   background-color: #005d90;
+  position: relative;
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 `;
 
-const Nav = styled.nav`
+const DesktopNav = styled.nav`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 25px;
   font-size: 13px;
-
-  // @media (min-width: 768px) {
-  //   gap: 1.5rem;
-  // }
 
   a {
     text-decoration: none;
@@ -112,17 +113,56 @@ const Nav = styled.nav`
       color: #dbeafe;
     }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
+
+const RightGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const MobileMenuToggle = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+`;
+
+const MobileMenu = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #005d90;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+
+  a {
+    padding: 12px 30px;
+    border-top: 1px solid #ffffff33;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #0367a6;
+    }
+  }
+`;
+
 const Content = styled.main`
   font-family: "Times New Roman", Times, serif;
-  /* padding: 0; */
-
-  /* @media (max-width: 768px) {
-    width: 100%;
-    padding: 0;
-    margin: 0; 
-  } */
 `;
+
 const Footer = styled.footer`
   background-color: #001733;
   height: 60px;
@@ -134,23 +174,55 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StyledHeader>
+          {/* Logo */}
           <LogoContainer>
-            <Image src="/logo.png" alt="Logo" width={125} height={48} />
+            <Link href="/">
+              <Image src="/logo.png" alt="Logo" width={125} height={48} />
+            </Link>
           </LogoContainer>
-          <Nav>
+
+          {/* Desktop Nav */}
+          <DesktopNav>
             {menu.map((mn, i) => (
               <Link href={mn.url} key={i}>
                 {mn.name}
               </Link>
             ))}
-          </Nav>
+            <Link href="/search">
+              <FaSearch color="white" size={16} />
+            </Link>
+          </DesktopNav>
+
+          {/* Mobile Right Side: Search + Hamburger */}
+          <RightGroup>
+            <Link href="/search">
+              <FaSearch color="white" size={18} />
+            </Link>
+            <MobileMenuToggle onClick={() => setMenuOpen(!menuOpen)}>
+              <FaBars />
+            </MobileMenuToggle>
+          </RightGroup>
+
+          {/* Mobile Menu Dropdown */}
+          {menuOpen && (
+            <MobileMenu>
+              {menuWithoutIcons.map((mn, i) => (
+                <Link href={mn.url} key={i} onClick={() => setMenuOpen(false)}>
+                  {mn.name}
+                </Link>
+              ))}
+            </MobileMenu>
+          )}
         </StyledHeader>
+
         <Content>{children}</Content>
         <Footer />
       </body>
