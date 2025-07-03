@@ -328,39 +328,44 @@ export default function Home() {
     <Container>
       <TopWrapper>
         <LeftGroup>
+          {/* Headline */}
           <HeadlineWrapper>
             {headline && <Headline headline={headline} />}
           </HeadlineWrapper>
-          <RelatedWrapper>
-            <RelatedText>RELATED STORIES</RelatedText>
-            <RelatedStories>
-              {related.map((item, idx) => {
-                const columns = Math.floor(
-                  window.innerWidth >= 1000 ? window.innerWidth / 220 : 1
-                );
-                const isLastInRow =
-                  columns > 1 ? (idx + 1) % columns === 0 : false;
-                return (
-                  <NewsCard
-                    item={item}
-                    key={item.id}
-                    showImage={false}
-                    showDescription={false}
-                    isLastInRow={isLastInRow}
-                  />
-                );
-              })}
-            </RelatedStories>
-          </RelatedWrapper>
+          {/* RelatedStories */}
+          {related.length > 0 && (
+            <RelatedWrapper>
+              <RelatedText>RELATED STORIES</RelatedText>
+              <RelatedStories>
+                {related.map((item, idx) => {
+                  const columns = Math.floor(
+                    window.innerWidth >= 1000 ? window.innerWidth / 220 : 1
+                  );
+                  const isLastInRow =
+                    columns > 1 ? (idx + 1) % columns === 0 : false;
+                  return (
+                    <NewsCard
+                      item={item}
+                      key={item.id}
+                      showImage={false}
+                      showDescription={false}
+                      isLastInRow={isLastInRow}
+                    />
+                  );
+                })}
+              </RelatedStories>
+            </RelatedWrapper>
+          )}
         </LeftGroup>
 
         <RightGroup>
+          {/* NewsList */}
           <NewsListWrapper>
             {news.map((item) => (
               <NewsCard item={item} key={item.id} />
             ))}
           </NewsListWrapper>
-
+          {/* Authors */}
           <AuthorsPanel>
             {related.map((item) => (
               <AuthorsPanelCard item={item} key={item.id} />
@@ -368,21 +373,23 @@ export default function Home() {
           </AuthorsPanel>
         </RightGroup>
       </TopWrapper>
-
-      <PopularWrapper>
-        <PopularText>POPULAR TODAY</PopularText>
-        <PopularList>
-          {popular.map((item, i) => (
-            <NewsCard
-              item={item}
-              key={item.id}
-              showImage={false}
-              showDescription={false}
-              index={i}
-            />
-          ))}
-        </PopularList>
-      </PopularWrapper>
+      {/* Popular Today */}
+      {popular.length > 0 && (
+        <PopularWrapper>
+          <PopularText>POPULAR TODAY</PopularText>
+          <PopularList>
+            {popular.map((item, i) => (
+              <NewsCard
+                item={item}
+                key={item.id}
+                showImage={false}
+                showDescription={false}
+                index={i}
+              />
+            ))}
+          </PopularList>
+        </PopularWrapper>
+      )}
       <LatestWrapper>
         {latest.map((item) => (
           <NewsCard
@@ -394,21 +401,24 @@ export default function Home() {
           />
         ))}
       </LatestWrapper>
-      <CategoryNewsWrapper>
-        <CategoryNews>
-          {categoryNews.map((item, index) => (
-            <CategoryNewsCard
-              item={item}
-              key={item.id}
-              isFourth={(index + 1) % 4 === 0}
-            />
-          ))}
-        </CategoryNews>
-        <EditorsPickWrapper>
-          <EditorsPickText>EDITOR&apos;S PICK</EditorsPickText>
-          {headline && <EditorsPick item={headline} />}
-        </EditorsPickWrapper>
-      </CategoryNewsWrapper>
+      {/* Category News */}
+      {categoryNews.length > 0 && (
+        <CategoryNewsWrapper>
+          <CategoryNews>
+            {categoryNews.map((item, index) => (
+              <CategoryNewsCard
+                item={item}
+                key={item.id}
+                isFourth={(index + 1) % 4 === 0}
+              />
+            ))}
+          </CategoryNews>
+          <EditorsPickWrapper>
+            <EditorsPickText>EDITOR&apos;S PICK</EditorsPickText>
+            {headline && <EditorsPick item={headline} />}
+          </EditorsPickWrapper>
+        </CategoryNewsWrapper>
+      )}
     </Container>
   );
 }
