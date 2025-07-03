@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+    compiler: {
+    styledComponents: true, //amacım styled-components Next.js ile Server-Side Rendering (SSR) uyumlu çalışması
+  },
 };
 
 export default nextConfig;
