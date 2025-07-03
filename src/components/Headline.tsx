@@ -7,7 +7,7 @@ import styled from "styled-components";
 interface Props {
   headline: NewsItem | null;
 }
-
+//STYLED
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,9 +26,6 @@ const StyledImage = styled(Image)`
   width: 100%;
   height: auto;
   object-fit: cover;
-  @media (max-width: 1000px) {
-    border-radius: 0;
-  }
   @media (max-width: 768px) {
     margin: 0;
     padding: 0;

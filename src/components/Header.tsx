@@ -204,8 +204,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaSearch, FaBars } from "react-icons/fa";
+import { FaBars, FaSearch } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import SearchInput from "./SearchInput";
 
 const RedDot = () => (
   <span
@@ -263,6 +264,7 @@ const menu = [
     url: "/live",
   },
 ];
+
 const menuWithoutIcons = [
   { name: "NEWS", url: "/news" },
   { name: "FEATURES", url: "/features" },
@@ -273,6 +275,7 @@ const menuWithoutIcons = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <header className="custom-header">
@@ -289,18 +292,35 @@ const Header = () => {
             {mn.name}
           </Link>
         ))}
-        <Link href="/search">
-          <FaSearch color="white" size={16} />
-        </Link>
+        {/* Search */}
+        {!searchOpen && (
+          <button
+            aria-label="Open search"
+            onClick={() => setSearchOpen(true)}
+            style={{ background: "none", border: "none", color: "white" }}
+          >
+            <FaSearch color="white" size={16} />
+          </button>
+        )}
+        {searchOpen && <SearchInput onClose={() => setSearchOpen(false)} />}
       </nav>
       {/* Mobile Right Side: Search + Hamburger */}
       <div className="right-group">
-        <Link href="/search">
-          <FaSearch color="white" size={18} />
-        </Link>
+        {!searchOpen && (
+          <button
+            aria-label="Open search"
+            onClick={() => setSearchOpen(true)}
+            style={{ background: "none", border: "none", color: "white" }}
+          >
+            <FaSearch color="white" size={18} />
+          </button>
+        )}
+        {searchOpen && <SearchInput onClose={() => setSearchOpen(false)} />}
+
         <button
           className="mobile-menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
         >
           <FaBars />
         </button>
