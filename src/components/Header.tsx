@@ -221,49 +221,24 @@ const RedDot = () => (
   />
 );
 
-const menu = [
-  {
-    name: (
-      <>
-        NEWS <MdKeyboardArrowDown />
-      </>
-    ),
-    url: "/news",
-  },
-  {
-    name: (
-      <>
-        FEATURES <MdKeyboardArrowDown />
-      </>
-    ),
-    url: "/features",
-  },
-  {
-    name: (
-      <>
-        TOPICS <MdKeyboardArrowDown />
-      </>
-    ),
-    url: "/topics",
-  },
-  {
-    name: (
-      <>
-        VIDEO <MdKeyboardArrowDown />
-      </>
-    ),
-    url: "/video",
-  },
-  {
-    name: (
-      <>
-        <RedDot />
-        LIVE
-      </>
-    ),
-    url: "/live",
-  },
+const menuItems = [
+  { label: "NEWS", url: "/news", hasArrow: true },
+  { label: "FEATURES", url: "/features", hasArrow: true },
+  { label: "TOPICS", url: "/topics", hasArrow: true },
+  { label: "VIDEO", url: "/video", hasArrow: true },
+  { label: "LIVE", url: "/live", isLive: true },
 ];
+const renderMenuName = (item: {
+  label: string;
+  hasArrow?: boolean;
+  isLive?: boolean;
+}) => (
+  <>
+    {item.isLive && <RedDot />}
+    {item.label}
+    {item.hasArrow && <MdKeyboardArrowDown />}
+  </>
+);
 
 const menuWithoutIcons = [
   { name: "NEWS", url: "/news" },
@@ -287,9 +262,9 @@ const Header = () => {
       </div>
       {/* Desktop Nav */}
       <nav className="desktop-nav">
-        {menu.map((mn, i) => (
-          <Link href={mn.url} key={i}>
-            {mn.name}
+        {menuItems.map((item, index) => (
+          <Link href={item.url} key={index}>
+            {renderMenuName(item)}
           </Link>
         ))}
         {/* Search */}

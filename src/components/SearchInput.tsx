@@ -52,27 +52,14 @@ const SearchInput: React.FC<SearchInputProps> = ({ onClose }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (searchTerm.trim().toLowerCase() === "palestinian") {
+    if (searchTerm.trim().toLowerCase() === "article") {
       router.push("/article");
     } else {
-      alert("No matching article found.");
+      router.push("/not-found");
     }
     onClose?.();
   };
 
-  // Optional: Click outside to close
-//   useEffect(() => {
-//     function handleClickOutside(event: MouseEvent) {
-//       if (
-//         inputRef.current &&
-//         !inputRef.current.contains(event.target as Node)
-//       ) {
-//         onClose?.();
-//       }
-//     }
-//     document.addEventListener("mousedown", handleClickOutside);
-//     return () => document.removeEventListener("mousedown", handleClickOutside);
-//   }, [onClose]);
 
   return (
     <Form onSubmit={handleSubmit}>

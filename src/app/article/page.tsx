@@ -7,90 +7,44 @@ import { format } from "date-fns";
 import RelatedStory from "@/components/RelatedStory";
 import MainInfo from "@/components/MainInfo";
 import ArticleBody from "@/components/ArticleBody";
+import Tags from "@/components/Tags";
 interface Article {
-  id: number;
   title: string;
   description: string;
   body: BodyBlock[];
-  path: string;
-  type: string;
   fields: Fields;
-  site: string;
   published: {
     date: string;
   };
-  paths: string[];
 }
-type BodyBlock = TextBlock | YoutubeBlock | RelatedArticle;
+
+type BodyBlock = TextBlock;
+
 interface TextBlock {
   blockType?: "text";
   value: string;
 }
 
-interface YoutubeBlock {
-  blockType: "youtube";
-  metadata: {
-    url: string;
-  };
-  value: string;
-}
-
-interface RelatedArticle {
-  id: number;
-  type: string;
-  title: string;
-  description: string;
-  mainImageUrl: string;
-  overlayImageUrl: string;
-  categories: Category[];
-  path: string;
-  publishedDate: string;
-  authors: Author[];
-}
 interface Fields {
-  search_title: {
-    text: string;
-  };
-  search_description: {
-    text: string;
-  };
-  topic_slug: {
-    text: string;
-  };
   mainImage: ImageInfo;
-  overlayImage: ImageInfo;
-  authors: AuthorBasic[];
-  relatedStory: {
-    id: number;
-    type: string;
-    title: string;
-    mainImageUrl: string;
-  };
+  relatedStory: RelatedStoryType;
   country: Country;
   tags: Tag[];
 }
+
 interface ImageInfo {
-  //   type: string;
-  //   assetId?: number;
-  //   cdnUrl: string;
   url: string;
   title?: string;
   source?: string;
-  //   author?: string;
-}
-interface AuthorBasic {
-  firstName: {
-    text: string;
-  };
-  lastName: {
-    text: string;
-  };
 }
 
-interface Category {
-  contentId: number;
+interface RelatedStoryType {
+  id: number;
+  type: string;
   title: string;
+  mainImageUrl: string;
 }
+
 interface Country {
   key: string;
   value: string;
@@ -100,16 +54,12 @@ interface Country {
     subregion: string;
   };
 }
+
 interface Tag {
   key: string;
   value: string;
 }
-interface Author {
-  userName: string;
-  firstName: string;
-  lastName: string;
-  mainImage?: string;
-}
+
 //STYLED
 const Container = styled.div`
   margin: 40px;
@@ -126,7 +76,7 @@ const MainContent = styled.div`
   border-right: 1px solid #ccc;
   padding-right: 35px;
   min-width: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     border-right: none;
     padding-right: 0;
   }
@@ -134,7 +84,7 @@ const MainContent = styled.div`
 const Related = styled.div`
   flex: 1;
   min-width: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `;
@@ -143,7 +93,7 @@ const Contents = styled.div`
   gap: 20px;
   width: 100%;
   box-sizing: border-box;
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     gap: 10px;
   }
@@ -169,56 +119,9 @@ const Description = styled.h2`
   font-size: 35px;
   color: #808080;
 `;
-const Tags = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-    padding: 30px 100px;
-  border-top:1px solid #ccc;
-    min-width: 0;
-      @media (max-width: 1000px) {
-       padding: 30px;
-  }
-  h3{
-    font-size: 18px;
-    font-weight: 800;
-      font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-      letter-spacing: 2px;
-  }
-`;
-const TagContent = styled.div`
-  gap: 5px;
-  display: flex;
-  gap: 20px;
-    flex-wrap: wrap;
-
-  span {
-    font-size: 15px;
-    font-weight: 900;
-    color: #808080;
-    text-transform: uppercase;
-    background-color: #edf2f7;
-    padding: 5px;
-  }
-`;
 
 const Page = () => {
   const [data, setData] = useState<Article | null>(null);
-
-  //   Variables
-  const relatedStory = data?.fields?.relatedStory;
-  const country = data?.fields?.country?.value;
-  const title = data?.title;
-  const description = data?.description;
-  const mainImageUrl = data?.fields?.mainImage?.url || "/placeholder.png";
-  const mainImageTitle = data?.fields?.mainImage?.title || "image";
-  const mainImageSource = data?.fields?.mainImage?.source;
-  const tags = data?.fields?.tags;
-  const publishedDate = data?.published?.date;
-  const body = data?.body;
-  const formattedDate = publishedDate
-    ? format(new Date(publishedDate), "dd MMM yyyy").toUpperCase()
-    : "";
 
   // Fetch
   const fetchData = async () => {
@@ -233,6 +136,22 @@ const Page = () => {
   }, []);
 
   if (!data) return <Loading />;
+
+  //   Variables
+  const {
+    title,
+    description,
+    body,
+    published,
+    fields: { mainImage, relatedStory, country: { value: country } = {}, tags } = {},
+  } = data;
+  const mainImageUrl = mainImage?.url || "/placeholder.png";
+  const mainImageTitle = mainImage?.title || "image";
+  const mainImageSource = mainImage?.source;
+  const publishedDate = published?.date;
+  const formattedDate = publishedDate
+    ? format(new Date(publishedDate), "dd MMM yyyy").toUpperCase()
+    : "";
 
   return (
     <Container>
@@ -249,13 +168,7 @@ const Page = () => {
             mainImageSource={mainImageSource}
           />
           <ArticleBody body={body} />
-          <Tags>
-            <h3>TAGS</h3>
-            <TagContent>
-            {tags?.map((tag, i) => (
-              <span key={i}>{tag.value}</span>
-            ))}</TagContent>
-          </Tags>
+          <Tags tags={tags} />        
         </MainContent>
 
         <Related>

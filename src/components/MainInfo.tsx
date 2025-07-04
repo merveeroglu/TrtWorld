@@ -14,6 +14,12 @@ const ImageContainer = styled.div`
   aspect-ratio: 16 / 9; /* Oran koruma */
   overflow: hidden;
   margin-bottom: 10px;
+  @media (max-width: 1000px) and (min-width: 769px) {
+    aspect-ratio: 16 / 7;
+  }
+  @media (max-width: 768px) {
+    aspect-ratio: 16 / 9;
+  }
 `;
 
 const StyledImage = styled(Image)`
