@@ -22,6 +22,9 @@ const Container = styled.div`
   gap: 30px;
   font-size: 22px;
   padding: 20px 100px;
+      @media (max-width: 576px) {
+  padding: 20px ;
+  }
 `;
 
 // YouTube video container with overlay

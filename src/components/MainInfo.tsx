@@ -4,38 +4,48 @@ import styled from "styled-components";
 
 interface Props {
   mainImageUrl: string;
-  mainImageTitle:string;
-  mainImageSource?:string;
+  mainImageTitle: string;
+  mainImageSource?: string;
 }
 
-const StyledImage = styled(Image)`
+const ImageContainer = styled.div`
+  position: relative;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9; /* Oran koruma */
+  overflow: hidden;
+  margin-bottom: 10px;
+`;
+
+const StyledImage = styled(Image)`
   object-fit: cover;
 `;
+
 const Source = styled.div`
   color: #868383;
   font-size: 18px;
-  text-transform:uppercase;
-  padding-bottom:0;
+  text-transform: uppercase;
+  margin-top: 10px;
 `;
+
 const Title = styled.div`
   color: #676565;
-    font-size: 20px;
-      padding-top:0;
-
+  font-size: 20px;
+  margin-top: 5px;
+  letter-spacing: 1px; /* Başlık harfleri arasına boşluk istersen */
 `;
 
-const MainInfo = ({ mainImageUrl, mainImageTitle,mainImageSource }: Props) => {
-    const beforeSlashTitle = mainImageTitle?.split("/")[0] || "";
+const MainInfo = ({ mainImageUrl, mainImageTitle, mainImageSource }: Props) => {
+  const beforeSlashTitle = mainImageTitle?.split("/")[0] || "";
+
   return (
     <>
-      <StyledImage
-        src={mainImageUrl}
-        alt={mainImageTitle}
-        width={600}
-        height={400}
-      />
+      <ImageContainer>
+        <StyledImage
+          src={mainImageUrl}
+          alt={mainImageTitle}
+          fill
+        />
+      </ImageContainer>
       <Source>{mainImageSource}</Source>
       <Title>{beforeSlashTitle}</Title>
     </>

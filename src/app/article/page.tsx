@@ -132,6 +132,8 @@ const MainContent = styled.div`
 `;
 const Related = styled.div`
   flex: 1;
+    min-width: 250px; 
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -139,6 +141,7 @@ const Related = styled.div`
 const Contents = styled.div`
   display: flex;
   gap: 20px;
+
 `;
 
 const Country = styled.div`
@@ -166,7 +169,7 @@ const Tags = styled.div`
   flex-direction: column;
   gap: 15px;
     padding: 30px 100px;
-  border-block:1px solid #ccc;
+  border-top:1px solid #ccc;
   h3{
     font-size: 18px;
     font-weight: 800;

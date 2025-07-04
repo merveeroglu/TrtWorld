@@ -20,12 +20,13 @@ const ContentRow = styled.div`
   gap: 15px;
 `;
 const StyledImage = styled(Image)`
-  width: 100%;
-  height: auto;
   object-fit: cover;
 `;
 const ImageWrapper = styled.div`
   flex: 1;
+  position: relative;
+  aspect-ratio: 3 / 2; // (600x400 = 3:2)
+  min-width: 120px;
 `;
 const Title = styled.h1`
   font-size: 18px;
@@ -47,8 +48,8 @@ const RelatedStory = ({ related }: Props) => {
           <StyledImage
             src={related.mainImageUrl}
             alt={related.title}
-            width={600}
-            height={400}
+            fill
+            sizes="(max-width: 768px) 100vw, 300px"
           />
         </ImageWrapper>
         <RelatedTitle>{related.title}</RelatedTitle>
