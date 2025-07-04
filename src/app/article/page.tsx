@@ -125,6 +125,7 @@ const MainContent = styled.div`
   gap: 20px;
   border-right: 1px solid #ccc;
   padding-right: 35px;
+  min-width: 0;
   @media (max-width: 768px) {
     border-right: none;
     padding-right: 0;
@@ -132,8 +133,7 @@ const MainContent = styled.div`
 `;
 const Related = styled.div`
   flex: 1;
-    min-width: 250px; 
-
+  min-width: 0;
   @media (max-width: 768px) {
     display: none;
   }
@@ -141,7 +141,12 @@ const Related = styled.div`
 const Contents = styled.div`
   display: flex;
   gap: 20px;
-
+  width: 100%;
+  box-sizing: border-box;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 const Country = styled.div`
@@ -170,6 +175,10 @@ const Tags = styled.div`
   gap: 15px;
     padding: 30px 100px;
   border-top:1px solid #ccc;
+    min-width: 0;
+      @media (max-width: 1000px) {
+       padding: 30px;
+  }
   h3{
     font-size: 18px;
     font-weight: 800;
@@ -181,6 +190,7 @@ const TagContent = styled.div`
   gap: 5px;
   display: flex;
   gap: 20px;
+    flex-wrap: wrap;
 
   span {
     font-size: 15px;
