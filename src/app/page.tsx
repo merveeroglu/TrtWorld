@@ -74,7 +74,7 @@ const LeftGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #cccccc98;
   padding-right: 30px;
   @media (max-width: 1000px) {
     border-right: none;

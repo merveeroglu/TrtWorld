@@ -73,10 +73,10 @@ const MainContent = styled.div`
   flex-direction: column;
   flex: 3;
   gap: 20px;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #cccccc98;
   padding-right: 35px;
   min-width: 0;
-  @media (max-width: 1000px) {
+  @media (max-width: 950px) {
     border-right: none;
     padding-right: 0;
   }
@@ -84,7 +84,7 @@ const MainContent = styled.div`
 const Related = styled.div`
   flex: 1;
   min-width: 0;
-  @media (max-width: 1000px) {
+  @media (max-width: 950px) {
     display: none;
   }
 `;
@@ -93,6 +93,8 @@ const Contents = styled.div`
   gap: 20px;
   width: 100%;
   box-sizing: border-box;
+    align-items: flex-start;
+  flex-wrap: wrap;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 10px;
@@ -114,10 +116,19 @@ const Dates = styled.span`
 const Title = styled.h1`
   font-size: 60px;
   font-weight: bold;
+  padding-right: 27vw;
+    @media (max-width: 1000px) {
+      padding-right: 0;
+    
+  }
 `;
 const Description = styled.h2`
-  font-size: 35px;
+  font-size: 27px;
   color: #808080;
+  padding-right: 30vw;
+    @media (max-width: 1000px) {
+      padding-right: 0;
+  }
 `;
 
 const Page = () => {
@@ -143,7 +154,12 @@ const Page = () => {
     description,
     body,
     published,
-    fields: { mainImage, relatedStory, country: { value: country } = {}, tags } = {},
+    fields: {
+      mainImage,
+      relatedStory,
+      country: { value: country } = {},
+      tags,
+    } = {},
   } = data;
   const mainImageUrl = mainImage?.url || "/placeholder.png";
   const mainImageTitle = mainImage?.title || "image";
@@ -168,7 +184,7 @@ const Page = () => {
             mainImageSource={mainImageSource}
           />
           <ArticleBody body={body} />
-          <Tags tags={tags} />        
+          <Tags tags={tags} />
         </MainContent>
 
         <Related>

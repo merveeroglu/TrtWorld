@@ -15,51 +15,63 @@ interface BodyItem {
 interface Props {
   body?: BodyItem[];
 }
-
+// STYLED
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  font-size: 22px;
+  gap: 15px;
+  font-size: 20px;
   padding: 20px 100px;
-      @media (max-width: 576px) {
-  padding: 20px ;
+      @media (max-width: 768px) {
+  padding: 50px ;
+  }     
+   @media (max-width: 576px) {
+  padding: 0 ;
   }
 `;
 
-// YouTube video container with overlay
 const YoutubeWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   aspect-ratio: 16 / 9;
+  margin-bottom: 20px;
   iframe {
     width: 100%;
     height: 100%;
   }
 `;
 
-// Article card container
 const ArticleWrapper = styled.div`
   display: flex;
   max-width: 600px;
   gap: 20px;
   align-items: center;
   position: relative;
-  padding-left: 12px; // Şerit için boşluk
+  padding-left: 12px; 
 `;
 
 const BlueStrip = styled.div`
   width: 25px;
-  background-color: #00b4ff; // Görseldeki maviye yakın
+  background-color: #00b4ff; 
   height: 60%;
   position: absolute;
   left: -12px;
   top: 23%;
-    @media (max-width: 675px) {
+    @media (max-width: 768px) {
+  height:50%;
+  }    
+  @media (max-width: 480px) {
+  height:40%;
+    top: 30%;
+  }   
+  @media (max-width: 390px) {
+  height:30%;
+    top: 35%;
+  }    
+  @media (max-width: 370px) {
     display: none;
   }
-
 `;
 
 const ArticleImage = styled.img`

@@ -16,8 +16,11 @@ const Container = styled.div`
   padding: 30px 100px;
   border-top: 1px solid #ccc;
   min-width: 0;
-  @media (max-width: 1000px) {
-    padding: 30px;
+  @media (max-width: 768px) {
+    padding: 50px;
+  }  
+  @media (max-width: 576px) {
+    padding: 15px 0;
   }
   h3 {
     font-size: 18px;

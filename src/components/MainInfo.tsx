@@ -7,13 +7,17 @@ interface Props {
   mainImageTitle: string;
   mainImageSource?: string;
 }
-
+// STYLED
+const Container = styled.div`
+display:flex;
+flex-direction: column;
+gap: 9px;
+`;
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9; /* Oran koruma */
   overflow: hidden;
-  margin-bottom: 10px;
   @media (max-width: 1000px) and (min-width: 769px) {
     aspect-ratio: 16 / 7;
   }
@@ -28,23 +32,22 @@ const StyledImage = styled(Image)`
 
 const Source = styled.div`
   color: #868383;
-  font-size: 18px;
+  font-size: 15px;
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-top: 5px;
 `;
 
 const Title = styled.div`
   color: #676565;
-  font-size: 20px;
-  margin-top: 5px;
-  letter-spacing: 1px; /* Başlık harfleri arasına boşluk istersen */
+  font-size: 16px;
+  letter-spacing: 0.2px; 
 `;
 
 const MainInfo = ({ mainImageUrl, mainImageTitle, mainImageSource }: Props) => {
   const beforeSlashTitle = mainImageTitle?.split("/")[0] || "";
 
   return (
-    <>
+    <Container>
       <ImageContainer>
         <StyledImage
           src={mainImageUrl}
@@ -54,7 +57,7 @@ const MainInfo = ({ mainImageUrl, mainImageTitle, mainImageSource }: Props) => {
       </ImageContainer>
       <Source>{mainImageSource}</Source>
       <Title>{beforeSlashTitle}</Title>
-    </>
+    </Container>
   );
 };
 
