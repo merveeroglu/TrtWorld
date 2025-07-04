@@ -27,7 +27,7 @@ const NewsList = ({ news }: NewsListProps) => {
   return (
     <NewsListWrapper>
       {news.map((item) => (
-        <NewsCard item={item} key={item.id} />
+        <NewsCard item={item} key={item.id} newList={true}/>
       ))}
     </NewsListWrapper>
   );

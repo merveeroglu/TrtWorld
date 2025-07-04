@@ -14,6 +14,11 @@ const Wrapper = styled.div`
   margin-bottom:20px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 20px;
+    &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 `;
 
 const StyledImage = styled(Image)`
