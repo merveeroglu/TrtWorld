@@ -23,7 +23,7 @@ const CategoryNewsList = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     border-right: none;
     padding-right: 0;
   }
@@ -39,7 +39,7 @@ const EditorsPickWrapper = styled.div`
   flex: 0.7;
   padding: 15px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;

@@ -51,7 +51,7 @@ const Container = styled.div`
   gap: 30px;
   margin: 30px 40px;
   @media (max-width: 768px) {
-    gap: 0;
+    gap: 20px;
     margin-top: 0;
     padding-top: 0;
   }
@@ -80,16 +80,29 @@ const LeftGroup = styled.div`
   @media (max-width: 768px) {
     border-right: none;
     padding-right: 0;
+    border-bottom: 1px solid #cccccc98;
+    padding-bottom: 30px;
+    border-top: 1px solid #cccccc98;
+    padding-top: 30px;
+    margin: 20px;
+  }
+  @media (max-width: 576px) {
+    margin-inline: 0;
   }
 `;
 
 const RightGroup = styled.div`
   display: flex;
   flex: 1;
-
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
+    border-bottom: 1px solid #cccccc98;
+    padding-bottom: 30px;
+  }
+  @media (max-width: 576px) {
     flex-direction: column;
     gap: 20px;
+    border-top: 1px solid #cccccc98;
+    padding-top: 30px;
   }
 `;
 //
