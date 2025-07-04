@@ -50,10 +50,14 @@ const Container = styled.div`
   flex-direction: column;
   gap: 30px;
   margin: 30px 40px;
+  
   @media (max-width: 768px) {
     gap: 20px;
     margin-top: 0;
     padding-top: 0;
+  }  
+  @media (max-width: 320px) {
+    box-sizing: border-box;
   }
 `;
 const TopWrapper = styled.div`
@@ -81,13 +85,12 @@ const LeftGroup = styled.div`
     border-right: none;
     padding-right: 0;
     border-bottom: 1px solid #cccccc98;
-    padding-bottom: 30px;
-    border-top: 1px solid #cccccc98;
-    padding-top: 30px;
-    margin: 20px;
-  }
+    padding-bottom: 30px;    
+    margin:20px;
+    margin-top: 0;
+  }  
   @media (max-width: 576px) {
-    margin-inline: 0;
+    margin-inline:0;
   }
 `;
 
@@ -96,13 +99,12 @@ const RightGroup = styled.div`
   flex: 1;
   @media (max-width: 768px) {
     border-bottom: 1px solid #cccccc98;
-    padding-bottom: 30px;
+    padding-bottom: 30px;    
   }
   @media (max-width: 576px) {
     flex-direction: column;
     gap: 20px;
-    border-top: 1px solid #cccccc98;
-    padding-top: 30px;
+    
   }
 `;
 //

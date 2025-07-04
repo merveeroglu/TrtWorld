@@ -14,7 +14,9 @@ const Wrapper = styled.div<{ $isFourth?: boolean }>`
   flex-direction: ${({ $isFourth }) => ($isFourth ? "column" : "row")};
   @media (max-width: 576px) {
     flex-direction: column;
-  }
+  }  
+  @media (max-width: 350px) {
+min-width:0;  }
 `;
 
 const StyledImage = styled(Image)<{ $isFourth?: boolean }>`
@@ -29,6 +31,8 @@ const StyledImage = styled(Image)<{ $isFourth?: boolean }>`
   }  
   @media (max-width: 576px) {
     max-width: 150px;
+    height: ${({ $isFourth }) => ($isFourth ? "80px" : "auto")};
+
   }
 `;
 const Info = styled.div<{ $isFourth?: boolean }>`

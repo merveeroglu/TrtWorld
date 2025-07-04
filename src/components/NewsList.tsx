@@ -12,6 +12,13 @@ const NewsListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media (max-width: 576px) {
+    border-right: none;
+    padding-right: 0;    
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
 `;
 
 const NewsList = ({ news }: NewsListProps) => {
