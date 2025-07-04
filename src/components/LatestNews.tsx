@@ -19,6 +19,9 @@ const Wrapper = styled.div`
   background-color: #edf2f7;
   padding: 55px;
 
+  @media (max-width: 870px) {
+  padding: 85px;
+  }  
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }

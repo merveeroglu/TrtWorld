@@ -11,7 +11,10 @@ interface Props {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media (max-width: 1000px) {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  @media (max-width: 768px) {
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -38,12 +41,15 @@ const Title = styled.h2`
   font-weight: bold;
   line-height: 40px;
   text-transform: capitalize;
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     margin-inline: 40px;
   }
 `;
 const ImageWrapper = styled.div`
   position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 `;
 const CategoryTag = styled.div`
   position: absolute;

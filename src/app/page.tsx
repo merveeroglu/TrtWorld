@@ -50,7 +50,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 30px;
   margin: 30px 40px;
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     gap: 0;
     margin-top: 0;
     padding-top: 0;
@@ -61,9 +61,9 @@ const TopWrapper = styled.div`
   gap: 30px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 50px;
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     flex-direction: column;
-    gap: 0;
+    gap: 35px;
     border-bottom: none;
     padding-bottom: 0;
   }
@@ -76,7 +76,8 @@ const LeftGroup = styled.div`
   gap: 30px;
   border-right: 1px solid #cccccc98;
   padding-right: 30px;
-  @media (max-width: 1000px) {
+  min-width: 0;
+  @media (max-width: 768px) {
     border-right: none;
     padding-right: 0;
   }

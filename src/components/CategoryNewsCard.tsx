@@ -20,11 +20,15 @@ const Wrapper = styled.div<{ $isFourth?: boolean }>`
 const StyledImage = styled(Image)<{ $isFourth?: boolean }>`
   object-fit: cover;
   flex: 1;
-  width: 100%;
-  height: auto;
+  /* width: 100%; */
+  /* height: auto; */
+  height: ${({ $isFourth }) => ($isFourth ? "350px" : "auto")};
+  width: ${({ $isFourth }) => ($isFourth ? "80%" : "100%")};
+  @media (max-width: 1200px) {
+    height: ${({ $isFourth }) => ($isFourth ? "250px" : "auto")};
+  }  
   @media (max-width: 576px) {
     max-width: 150px;
-    height: auto;
   }
 `;
 const Info = styled.div<{ $isFourth?: boolean }>`
@@ -73,9 +77,8 @@ const DateWrapperTop = styled.div`
   font-size: 15px;
   color: #808080d5;
   margin-left: 10px;
-    @media (max-width: 576px) {
-      margin-left: 0;
-
+  @media (max-width: 576px) {
+    margin-left: 0;
   }
 `;
 
@@ -92,6 +95,7 @@ const CategoryNewsCard = ({ item, isFourth }: Props) => {
           alt={item.title}
           width={200}
           height={80}
+          $isFourth={isFourth}
         />
         <DateCategoryWrapperTop>
           {categoryTitles && <CategoryTitles>{categoryTitles}</CategoryTitles>}

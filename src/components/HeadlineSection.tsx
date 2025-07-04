@@ -13,6 +13,15 @@ const HeadlineWrapper = styled.div`
     padding-top: 0;
     margin-top: 0;
   }
+  @media (max-width: 768px) {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 const HeadlineSection = ({ headline }: Props) => {
