@@ -10,6 +10,8 @@ interface Props {
 const PopularWrapper = styled.div`
   display: flex;
   flex-direction: column;
+    max-width: 100vw;
+  overflow-x: hidden;
 `;
 
 const PopularList = styled.div`

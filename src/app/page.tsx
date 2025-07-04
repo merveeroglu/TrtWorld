@@ -50,7 +50,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 30px;
   margin: 30px 40px;
-  
+
   @media (max-width: 768px) {
     gap: 20px;
     margin-top: 0;
@@ -65,6 +65,7 @@ const TopWrapper = styled.div`
   gap: 30px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 50px;
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 35px;

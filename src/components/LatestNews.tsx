@@ -18,7 +18,8 @@ const Wrapper = styled.div`
   margin-right: -70px;
   background-color: #edf2f7;
   padding: 55px;
-
+  max-width: 100vw;
+  overflow-x: hidden;
   @media (max-width: 870px) {
   padding: 85px;
   }  

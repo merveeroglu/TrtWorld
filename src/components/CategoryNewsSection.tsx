@@ -14,6 +14,8 @@ const Wrapper = styled.div`
   gap: 20px;
   border-top: 1px solid #ccc;
   padding-top: 20px;
+    max-width: 100vw;
+  overflow-x: hidden;
 `;
 
 const CategoryNewsList = styled.div`

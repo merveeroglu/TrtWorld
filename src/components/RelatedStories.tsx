@@ -31,6 +31,12 @@ const RelatedStorie = styled.div`
   @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
+    gap: 0;
+    > *:not(:last-child) {
+      border-bottom: 1px solid #cccccc98;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
     > * {
       border-right: none;
       padding-right: 0;
