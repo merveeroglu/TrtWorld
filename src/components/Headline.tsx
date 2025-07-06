@@ -66,7 +66,6 @@ const CategoryTag = styled.div`
 
 const Headline = ({ headline }: Props) => {
  const categoryTitle = headline?.categories?.[1]?.title;
-   console.log("headline?.categories?.[1]?.title", headline?.categories?.[1]?.title);
   if (!headline) return null;
 
   return (

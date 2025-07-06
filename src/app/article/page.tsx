@@ -93,7 +93,7 @@ const Contents = styled.div`
   gap: 20px;
   width: 100%;
   box-sizing: border-box;
-    align-items: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -117,28 +117,29 @@ const Title = styled.h1`
   font-size: 60px;
   font-weight: bold;
   padding-right: 27vw;
-    @media (max-width: 1000px) {
-      padding-right: 0;
-    
+  @media (max-width: 1000px) {
+    padding-right: 0;
   }
 `;
 const Description = styled.h2`
   font-size: 27px;
   color: #808080;
   padding-right: 30vw;
-    @media (max-width: 1000px) {
-      padding-right: 0;
+  @media (max-width: 1000px) {
+    padding-right: 0;
   }
 `;
 
 const Page = () => {
   const [data, setData] = useState<Article | null>(null);
+  const [formattedDate, setFormattedDate] = useState<string>("");
 
   // Fetch
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:4000/content");
-    setData(response?.data);
-    console.log("data", response?.data);
+    const response = await axios.get(
+      "https://www.trtworld.com/api/content?path=/middle-east/palestinian-detainees-in-israeli-jails-increased-130-after-october-7-17811425"
+    );
+    setData(response?.data.content);
   };
 
   // USEEFFECT
@@ -146,14 +147,22 @@ const Page = () => {
     fetchData();
   }, []);
 
+  // Format date only on client
+  const publishedDate = data?.published?.date;
+
+  useEffect(() => {
+    if (publishedDate) {
+      const date = format(new Date(publishedDate), "dd MMM yyyy").toUpperCase();
+      setFormattedDate(date);
+    }
+  }, [publishedDate]);
+
   if (!data) return <Loading />;
 
-  //   Variables
   const {
     title,
     description,
     body,
-    published,
     fields: {
       mainImage,
       relatedStory,
@@ -161,21 +170,20 @@ const Page = () => {
       tags,
     } = {},
   } = data;
+
   const mainImageUrl = mainImage?.url || "/placeholder.png";
   const mainImageTitle = mainImage?.title || "image";
   const mainImageSource = mainImage?.source;
-  const publishedDate = published?.date;
-  const formattedDate = publishedDate
-    ? format(new Date(publishedDate), "dd MMM yyyy").toUpperCase()
-    : "";
 
   return (
     <Container>
+      {/* Header Section: Title and Description grouped */}
       <Country>
-        {country} <Dates>{formattedDate}</Dates>
+        {country} {formattedDate && <Dates>{formattedDate}</Dates>}
       </Country>
       <Title>{title}</Title>
       <Description>{description}</Description>
+      {/* Image Section */}
       <Contents>
         <MainContent>
           <MainInfo
@@ -183,10 +191,11 @@ const Page = () => {
             mainImageTitle={mainImageTitle}
             mainImageSource={mainImageSource}
           />
+          {/* Body */}
           <ArticleBody body={body} />
           <Tags tags={tags} />
         </MainContent>
-
+        {/* Related */}
         <Related>
           <RelatedStory related={relatedStory} />
         </Related>

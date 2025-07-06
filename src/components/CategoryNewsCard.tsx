@@ -1,6 +1,6 @@
 import { NewsItem } from "@/app/page";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { format } from "date-fns";
 
@@ -87,12 +87,19 @@ const DateWrapperTop = styled.div`
 `;
 
 const CategoryNewsCard = ({ item, isFourth }: Props) => {
+        const [formattedDate, setFormattedDate] = useState('');
+
   const categoryTitles = item.categories
     ?.slice(1) // 0. index hariç
     .map((cat) => cat.title.toUpperCase())
     .join(" & ");
+    
+    useEffect(() => {
+      setFormattedDate(format(new Date(item.publishedDate), "dd MMM yyyy").toUpperCase());
+    }, [item.publishedDate]);
   return (
     <Wrapper $isFourth={isFourth}>
+      {/* Header */}
       <PreviewHeader>
         <StyledImage
           src={item.mainImageUrl}
@@ -108,12 +115,15 @@ const CategoryNewsCard = ({ item, isFourth }: Props) => {
           </DateWrapperTop>
         </DateCategoryWrapperTop>
       </PreviewHeader>
+      {/* Info */}
       <Info>
         <DateWrapper>
           {categoryTitles && <CategoryTitles>{categoryTitles}</CategoryTitles>}
-          <DateWrapperTop>
-            {format(new Date(item.publishedDate), "dd MMM yyyy").toUpperCase()}
-          </DateWrapperTop>
+           { formattedDate && (
+            <DateWrapperTop>
+              {formattedDate}
+            </DateWrapperTop>
+          )}
         </DateWrapper>
         <Title>{item.title}</Title>
         <Description>{item.description}</Description>

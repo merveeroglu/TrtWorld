@@ -1,7 +1,7 @@
 "use client";
 import { NewsItem } from "@/app/page";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { format } from "date-fns";
 
@@ -85,6 +85,11 @@ const NewsCard = ({
   $categoryNews = false,
   newList = false,
 }: Props) => {
+  const [formattedDate, setFormattedDate] = useState('');
+
+useEffect(() => {
+  setFormattedDate(format(new Date(item.publishedDate), "dd MMM yyyy").toUpperCase());
+}, [item.publishedDate]);
   return (
     <Wrapper
       $isCenter={index !== -1}
@@ -104,12 +109,9 @@ const NewsCard = ({
           />
         )}
         <div>
-          {showDate && (
+          {showDate && formattedDate && (
             <DateWrapper>
-              {format(
-                new Date(item.publishedDate),
-                "dd MMM yyyy"
-              ).toUpperCase()}
+              {formattedDate}
             </DateWrapper>
           )}
           <Title $latest={$latest} $isBold={index !== -1}>

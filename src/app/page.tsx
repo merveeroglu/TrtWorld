@@ -55,7 +55,7 @@ const Container = styled.div`
     gap: 20px;
     margin-top: 0;
     padding-top: 0;
-  }  
+  }
   @media (max-width: 320px) {
     box-sizing: border-box;
   }
@@ -86,12 +86,12 @@ const LeftGroup = styled.div`
     border-right: none;
     padding-right: 0;
     border-bottom: 1px solid #cccccc98;
-    padding-bottom: 30px;    
-    margin:20px;
+    padding-bottom: 30px;
+    margin: 20px;
     margin-top: 0;
-  }  
+  }
   @media (max-width: 576px) {
-    margin-inline:0;
+    margin-inline: 0;
   }
 `;
 
@@ -100,12 +100,11 @@ const RightGroup = styled.div`
   flex: 1;
   @media (max-width: 768px) {
     border-bottom: 1px solid #cccccc98;
-    padding-bottom: 30px;    
+    padding-bottom: 30px;
   }
   @media (max-width: 576px) {
     flex-direction: column;
     gap: 20px;
-    
   }
 `;
 //
@@ -117,39 +116,31 @@ export default function Home() {
   const [latest, setLatest] = useState<NewsItem[]>([]);
   const [categoryNews, setCategoryNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(false);
+
   // FETCH
   const fetchData = async () => {
     setLoading(true);
-    const [
-      headlineRes,
-      newsRes,
-      relatedRes,
-      popularRes,
-      latestRes,
-      categoryNewsRes,
-    ] = await Promise.all([
-      axios.get("http://localhost:4000/headline"),
-      axios.get("http://localhost:4000/news"),
-      axios.get("http://localhost:4000/related"),
-      axios.get("http://localhost:4000/popular"),
-      axios.get("http://localhost:4000/latest"),
-      axios.get("http://localhost:4000/categoryNews"),
-    ]);
-    console.log("categoryNewsRes", categoryNewsRes);
-    setHeadline(headlineRes.data[0]);
-    setNews(newsRes.data);
-    setRelated(relatedRes.data);
-    setPopular(popularRes.data);
-    setLatest(latestRes.data);
-    setCategoryNews(categoryNewsRes.data);
+    const homeRes = await axios.get("https://www.trtworld.com/api/homepage");
+    const articleRes = await axios.get(
+      "https://www.trtworld.com/api/content?path=/middle-east/palestinian-detainees-in-israeli-jails-increased-130-after-october-7-17811425"
+    );
+    const data = homeRes?.data;
+    const dataArt = articleRes?.data;
+    setHeadline(data?.headline[0]);
+    setNews(data?.news);
+    setRelated(dataArt?.related);
+    setPopular(dataArt?.popular);
+    setLatest(data?.latest);
+    setCategoryNews(dataArt?.categoryNews);
     setLoading(false);
   };
+
   // USEEFFECT
   useEffect(() => {
     fetchData();
   }, []);
+  
   if (loading) return <Loading />;
-
   return (
     <>
       <Container>
