@@ -55,7 +55,7 @@ const Header = () => {
       {/* Logo */}
       <div className="logo-container">
         <Link href="/">
-          <Image src="/logo.png" alt="Logo" width={125} height={48} style={{ width: "auto", height: "auto" }} />
+          <Image src="/logo.png" alt="Logo" width={125} height={48} style={{ width: "125px", height: "auto" }} />
         </Link>
       </div>
       {/* Desktop Nav */}

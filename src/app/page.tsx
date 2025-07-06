@@ -120,9 +120,10 @@ export default function Home() {
   // FETCH
   const fetchData = async () => {
     setLoading(true);
-    const homeRes = await axios.get("https://www.trtworld.com/api/homepage");
+    const BASE_URL = "https://www.trtworld.com/api";
+    const homeRes = await axios.get(`${BASE_URL}/homepage`);
     const articleRes = await axios.get(
-      "https://www.trtworld.com/api/content?path=/middle-east/palestinian-detainees-in-israeli-jails-increased-130-after-october-7-17811425"
+      `${BASE_URL}/content?path=/middle-east/palestinian-detainees-in-israeli-jails-increased-130-after-october-7-17811425`
     );
     const data = homeRes?.data;
     const dataArt = articleRes?.data;
