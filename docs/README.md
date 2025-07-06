@@ -34,6 +34,13 @@ npm run dev
 - Reusable styled-components are used to minimize repeated CSS.
 - All props and types are defined with TypeScript.
 
+## Navigation Tips
+To access the Article Page, you can:
+
+- Type "article" in the search field on the homepage.
+
+- Or directly navigate to /article in the URL bar.
+
 ## Test
 ```bash
 npm run test
